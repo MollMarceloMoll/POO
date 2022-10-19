@@ -43,6 +43,26 @@ class MainActivity : AppCompatActivity() {
         println("La resta de 80 - 20 = ${calculadora(80,20, :: resta)}")
         println("La multiplicacion de 80 * 20 = ${calculadora(80,20, :: multiplica)}")
         println("La division de 80 / 20 = ${calculadora(80,20, :: divide)}")
-    }
 
+        fun suma(a: Int, b: Int, fa:(Int,Int)->Int): Int {
+            return fa(a,b)
+        }
+        println(suma(100,100) { a: Int, b: Int -> a + b })
+
+        fun ordenSuperior(n: Int, fn:(Int)-> Boolean): Boolean {
+            return fn(n)
+        }
+        println(ordenSuperior(10){n: Int -> n true})
+    }
 }
+/*
+Crear una funcion de Orden Superior que reciba un Int y una funcion que reciba un Int y devuelva un Boolean.
+
+Llama a dicha funcion de Orden Superior con expreciones Lambads que hagan lo siguientes:
+
+- Comprobar si el número es un número par
+- Comprobar si el número es un numero primo
+- Comprobar si el número es un número guay (un número es guay cuando es el resultado de la suma de números
+consecutivos desde el 1. Por ejemplo el número 10 es guay porque 1+2+3+4 = 10. El 15 tambies es guay porque
+1+2+3+4+5+ = 15. El número 8 no es guay porque no hay ninguna posible combinacion de sumas consecutivas desde el 1 que resulte 8)
+ */
