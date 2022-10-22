@@ -52,8 +52,32 @@ class MainActivity : AppCompatActivity() {
         fun ordenSuperior(n: Int, fn:(Int)-> Boolean): Boolean {
             return fn(n)
         }
-        println("Comprobando si el número es par "+ordenSuperior(10){x -> x % 2 == 0})
-        println("Comprobando si el número es primo : "+ordenSuperior(9){z -> })
+        println("Comprobando si el número 10 es par  : "+ordenSuperior(10){x -> x % 2 == 0})
+        println("Comprobando si el número 9 es primo  : "+ordenSuperior(9){
+            x ->
+            var primo = true
+            for (i in 2..x / 2) {
+                if (x % i == 0) {
+                    primo = false
+                    break
+                }
+            }
+            primo
+        })
+        println("Comprobando si el número 15 es Guay : "+ordenSuperior(15){
+            x ->
+            var suma = 0
+            var esGuay = false
+            for (i in 1 .. x) {
+                suma += i
+                if (suma > x) break
+                if (suma == x) {
+                    esGuay = true
+                    break
+                }
+            }
+            esGuay
+        })
     }
 }
 /*
