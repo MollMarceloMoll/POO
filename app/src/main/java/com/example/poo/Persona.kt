@@ -8,3 +8,6 @@ open class Persona(var nombre: String, var edad: Int) {
         else field = -1
     }
 }
+fun calculadora(a: Int) {
+    var a = 10
+}
